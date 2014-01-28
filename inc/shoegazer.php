@@ -37,8 +37,24 @@ class shoegazer {
         return $skin;
     }
 
+    /**
+     * The colors to be used, based on skin
+     *
+     * @return array $colors
+     */
     function colors() {
-        if ( $this->skin() == 'loveless' ) {
+        if ( $this->skin() == 'mbv' ) {
+            $colors = array(
+                'primary'       => '',
+                'page_bg'       => '',
+                'main_bg'       => '',
+                'alt_bg'        => '',
+                'text'          => '',
+                'accent'        => '',
+                'header_text'   => '',
+            );
+        }
+        elseif ( $this->skin() == 'loveless' ) {
             $colors = array(
                 'primary'       => 'F14BA6',
                 'page_bg'       => 'A53852',
@@ -50,9 +66,63 @@ class shoegazer {
 
             );
         }
+        elseif ( $this->skin() == 'isntAnything' ) {
+            $colors = array(
+                'primary'       => '',
+                'page_bg'       => '',
+                'main_bg'       => '',
+                'alt_bg'        => '',
+                'text'          => '',
+                'accent'        => '',
+                'header_text'   => '',
+            );
+        }
+        elseif ( $this->skin() == 'tremolo' ) {
+            $colors = array(
+                'primary'       => '',
+                'page_bg'       => '',
+                'main_bg'       => '',
+                'alt_bg'        => '',
+                'text'          => '',
+                'accent'        => '',
+                'header_text'   => '',
+            );
+        }
+        elseif ( $this->skin() == 'glider' ) {
+            $colors = array(
+                'primary'       => '',
+                'page_bg'       => '',
+                'main_bg'       => '',
+                'alt_bg'        => '',
+                'text'          => '',
+                'accent'        => '',
+                'header_text'   => '',
+            );
+        }
+        else {
+            $colors = array(
+                'primary'       => '',
+                'page_bg'       => '',
+                'main_bg'       => '',
+                'alt_bg'        => '',
+                'text'          => '',
+                'accent'        => '',
+                'header_text'   => '',
+            );
+
+        }
+
         return $colors;
     }
 
+    /**
+     * Output inline styles for skin color scheme
+     *
+     * @since 0.1.0
+     *
+     * @uses wp_add_inline_style()
+     * @uses shoegazer::colors()
+     */
     function inline() {
         $colors = $this->colors();
         //widget-title
