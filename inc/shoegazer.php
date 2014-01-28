@@ -41,10 +41,13 @@ class shoegazer {
         if ( $this->skin() == 'loveless' ) {
             $colors = array(
                 'primary'       => 'F14BA6',
-                'header_text'   => '59302E',
-                'background'    => 'A53852',
+                'page_bg'       => 'A53852',
+                'main_bg'       => 'fff',
+                'alt_bg'        => '59302E',
                 'text'          => '2F2426',
                 'accent'        => 'F059AD',
+                'header_text'   => '59302E',
+
             );
         }
         return $colors;
@@ -52,9 +55,16 @@ class shoegazer {
 
     function inline() {
         $colors = $this->colors();
+        //widget-title
         $style = ".widget-title { background-color: #{$colors[ 'primary' ]} }";
+        //main bg color
+        $style .= "#sidebar-subsidiary, #main, #header { background-color: #{$colors[ 'main_bg' ]} }"; ;
+        //site title color
+        $style .= "h1.site-title a { color: #{$colors[ 'header_text' ]} }";
+        //footer, header bg
+        $style .= "#menu-primary, #footer { background-color: #{$colors[ 'alt_bg' ]} }";
         //do the background color with this, for now. @todo this right.
-        $style .= "body { background-color: #{$colors[ 'background' ]} }";
+        $style .= "body { background-color: #{$colors[ 'page_bg' ]} }";
         wp_add_inline_style( 'style', $style );
 
     }
@@ -80,7 +90,7 @@ class shoegazer {
         add_theme_support(
             'custom-background',
             array(
-                'default-color' => $colors[ 'background' ],
+                'default-color' => $colors[ 'page_bg' ],
                 'default-image' => '',
             )
         );
