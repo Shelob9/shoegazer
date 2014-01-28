@@ -73,7 +73,7 @@ class shoegazer {
                 'main_bg'       => 'FCF6E7',
                 'alt_bg'        => 'B09692',
                 'text'          => '5F3F3D',
-                'accent'        => 'D8AD9F',
+                'accent'        => '9F605A',
                 'header_text'   => '9F605A',
             );
         }
@@ -134,6 +134,15 @@ class shoegazer {
         $style .= "h1.site-title a { color: #{$colors[ 'header_text' ]} }";
         //footer, header bg
         $style .= "#menu-primary, #footer { background-color: #{$colors[ 'alt_bg' ]}; border-bottom: 1px solid #{$colors[ 'accent']} }";
+        //header and footer menu link colors
+        $style .= "
+            #menu-primary li.current-menu-item>a, #menu-primary li a:hover, #menu-social li.current-menu-item>a,  #menu-social li a:hover, #footer a:hover {
+                color: #{$colors[ 'accent' ]};
+            }
+            #menu-primary li a, #menu-social li a, #footer a {
+                color: #{$colors[ 'main_bg' ]};
+            }
+        ";
         //do the background color with this, for now. @todo this right.
         $style .= "body { background-color: #{$colors[ 'page_bg' ]} }";
         wp_add_inline_style( 'style', $style );
