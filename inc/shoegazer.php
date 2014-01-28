@@ -119,6 +119,8 @@ class shoegazer {
      *
      * @since 0.1.0
      *
+     * @todo menu pop-out bg colors
+     *
      * @uses wp_add_inline_style()
      * @uses shoegazer::colors()
      */
