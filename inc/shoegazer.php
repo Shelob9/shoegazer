@@ -12,6 +12,8 @@ class shoegazer {
         add_action( 'after_setup_theme', array( $this, 'theme_setup' ) );
         /* Add a custom default color for the "primary" color option. */
         add_filter( 'theme_mod_color_primary', array( $this, 'color_primary' ) );
+        /** Add additional skin specific CSS as inline styles */
+        add_action( 'wp_enqueue_scripts', array( $this, 'inline' ) );
     }
 
     /**
@@ -46,6 +48,15 @@ class shoegazer {
             );
         }
         return $colors;
+    }
+
+    function inline() {
+        $colors = $this->colors();
+        $style = "
+            .widget-title { background-color: #{$colors[ 'primary' ]} }
+        ";
+        wp_add_inline_style( 'style', $style );
+
     }
 
     /**
