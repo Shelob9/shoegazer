@@ -10,14 +10,43 @@ class shoegazer {
     function __construct() {
         /* Add the child theme setup function to the 'after_setup_theme' hook. */
         add_action( 'after_setup_theme', array( $this, 'theme_setup' ) );
-        /* Filter to add custom default backgrounds (supported by the framework). */
-        add_filter( 'hybrid_default_backgrounds', array( $this, 'default_backgrounds' ) );
-
         /* Add a custom default color for the "primary" color option. */
         add_filter( 'theme_mod_color_primary', array( $this, 'color_primary' ) );
     }
-    
 
+    /**
+     * Get the current skin
+     *
+     * @since 0.1.0
+     * @return string $skin;
+     */
+
+    function skin() {
+        $skin = get_theme_mod( 'shoegazer_skin' );
+        /**
+         * Override which skin is set
+         *
+         * @since 0.1.0
+         *
+         * @param string $skin Which skin to use. Valid values: mbv|loveless|isntAnything|tremolo|glider
+         *
+         */
+        $skin = apply_filters( 'shoegazer_skin', $skin );
+        return $skin;
+    }
+
+    function colors() {
+        if ( $this->skin() == 'loveless' ) {
+            $colors = array(
+                'primary'       => 'F14BA6',
+                'header_text'   => '59302E',
+                'background'    => 'A53852',
+                'text'          => '2F2426',
+                'accent'        => 'F059AD',
+            );
+        }
+        return $colors;
+    }
 
     /**
      * Setup function.
@@ -27,7 +56,10 @@ class shoegazer {
      * @return void
      */
     function theme_setup() {
-
+        /**
+         * Put skin colors into var $colors
+         */
+        $colors = $this->colors();
         /*
          * Add a custom background to overwrite the defaults.  Remove this section if you want to use
          * the parent theme defaults instead.
@@ -37,7 +69,7 @@ class shoegazer {
         add_theme_support(
             'custom-background',
             array(
-                'default-color' => '2d2d2d',
+                'default-color' => $colors[ 'background' ],
                 'default-image' => '',
             )
         );
@@ -51,64 +83,13 @@ class shoegazer {
         add_theme_support(
             'custom-header',
             array(
-                'default-text-color' => '252525',
+                'default-text-color' => $colors[ 'header_text' ],
                 'default-image'      => '',
                 'random-default'     => false,
             )
         );
-
-        /*
-         * Registers default headers for the theme.  The below are examples from the parent theme and should
-         * not be used (use your own headers).  If you don't want to add custom headers, remove this section.
-         *
-         * @link http://codex.wordpress.org/Function_Reference/register_default_headers
-         */
-        register_default_headers(
-            array(
-                'horizon' => array(
-                    'url'           => '%2$s/images/headers/horizon.jpg',
-                    'thumbnail_url' => '%2$s/images/headers/horizon-thumb.jpg',
-                    /* Translators: Header image description. */
-                    'description'   => __( 'Horizon', 'theme-slug' )
-                ),
-                'orange-burn' => array(
-                    'url'           => '%2$s/images/headers/orange-burn.jpg',
-                    'thumbnail_url' => '%2$s/images/headers/orange-burn-thumb.jpg',
-                    /* Translators: Header image description. */
-                    'description'   => __( 'Orange Burn', 'theme-slug' )
-                ),
-            )
-        );
-
-
     }
 
-    /**
-     * This works just like the WordPress `register_default_headers()` function.  You're just setting up an
-     * array of backgrounds.  The following backgrounds are merely examples from the parent theme.  Please
-     * don't use them.  Use your own backgrounds.  Or, remove this section (and the `add_filter()` call earlier)
-     * if you don't want to register custom backgrounds.
-     *
-     * @since  0.1.0
-     * @access public
-     * @param  array  $backgrounds
-     * @return array
-     */
-    function default_backgrounds( $backgrounds ) {
-
-        $new_backgrounds = array(
-            'dark-orange-cross' => array(
-                'url'           => '%2$s/images/backgrounds/dark-orange-cross.png',
-                'thumbnail_url' => '%2$s/images/backgrounds/dark-orange-cross.png',
-            ),
-            'star-field-dark' => array(
-                'url'           => '%2$s/images/backgrounds/star-field-dark.jpg',
-                'thumbnail_url' => '%2$s/images/backgrounds/star-field-dark.jpg',
-            ),
-        );
-
-        return array_merge( $new_backgrounds, $backgrounds );
-    }
 
     /**
      * Add a default custom color for the theme's "primary" color option.  Users can overwrite this from the
@@ -123,7 +104,10 @@ class shoegazer {
      * @return string
      */
     function color_primary( $hex ) {
-        return $hex ? $hex : 'cc4a00';
+        $colors = $this->colors();
+        return $hex ? $hex : $primary = $colors['primary'];
     }
 
-} 
+}
+
+new shoegazer();
