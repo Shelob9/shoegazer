@@ -8,6 +8,15 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
+/**
+ * Include the class for the skin switch.
+ *
+ * @since  0.1.0
+ */
+include_once( 'inc/shoegazer_admin.php' );
+
+
+
 /* Add the child theme setup function to the 'after_setup_theme' hook. */
 add_action( 'after_setup_theme', 'themeslug_theme_setup' );
 
@@ -122,3 +131,5 @@ function themeslug_default_backgrounds( $backgrounds ) {
 function themeslug_color_primary( $hex ) {
 	return $hex ? $hex : 'cc4a00';
 }
+
+
