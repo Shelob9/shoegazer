@@ -52,9 +52,9 @@ class shoegazer {
 
     function inline() {
         $colors = $this->colors();
-        $style = "
-            .widget-title { background-color: #{$colors[ 'primary' ]} }
-        ";
+        $style = ".widget-title { background-color: #{$colors[ 'primary' ]} }";
+        //do the background color with this, for now. @todo this right.
+        $style .= "body { background-color: #{$colors[ 'background' ]} }";
         wp_add_inline_style( 'style', $style );
 
     }
