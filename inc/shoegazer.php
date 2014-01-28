@@ -68,13 +68,13 @@ class shoegazer {
         }
         elseif ( $this->skin() == 'isntAnything' ) {
             $colors = array(
-                'primary'       => '',
-                'page_bg'       => '',
-                'main_bg'       => '',
-                'alt_bg'        => '',
-                'text'          => '',
-                'accent'        => '',
-                'header_text'   => '',
+                'primary'       => '9F605A',
+                'page_bg'       => 'EFD0B6',
+                'main_bg'       => 'FCF6E7',
+                'alt_bg'        => 'B09692',
+                'text'          => '5F3F3D',
+                'accent'        => 'D8AD9F',
+                'header_text'   => '9F605A',
             );
         }
         elseif ( $this->skin() == 'tremolo' ) {
@@ -111,7 +111,6 @@ class shoegazer {
             );
 
         }
-
         return $colors;
     }
 
@@ -196,7 +195,7 @@ class shoegazer {
      */
     function color_primary( $hex ) {
         $colors = $this->colors();
-        return $hex ? $hex : $primary = $colors['primary'];
+        return $hex ? $hex : $colors[ 'primary' ];
     }
 
 }
