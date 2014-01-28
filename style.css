@@ -1,0 +1,32 @@
+/**
+ * Theme Name:  Stargazer Child - Dev
+ * Theme URI:   http://yoursite.com/themes/theme-slug
+ * Description: Your theme description.
+ * Version:     0.1.0
+ * Author:      Justin Tadlock
+ * Author URI:  http://justintadlock.com
+ * Tags:        custom-background, custom-colors, custom-header
+ * License:     GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Template:    stargazer
+ */
+
+/*
+ * Note that the parent theme's `style.css` file is automatically loaded.  Do *not* try to load it again 
+ * with `@import`.
+ *
+ * The only custom CSS you really should add to your child theme is CSS to overwrite colors and fonts.  The 
+ * things available to be overwritten are labeled as the "Fun Zone" in the Stargazer theme's `style.css` file. 
+ * Just open it up and check it out.  Everything is clearly marked and commented so that you can understand 
+ * what you're allowed to overwrite.
+ *
+ * To be perfectly honest, you could probably get away with not adding a single line of CSS code if you really 
+ * go all out with some of the `functions.php` design options.
+ *
+ * Of course, use your best judgement with everything.  Have fun.  And, throw the rules out the window when 
+ * justified.
+ *
+ * If you make custom color/font changes that change the output of things in the post content, you'll want to 
+ * add those changes to a file called `editor-style.css` and place it within your child theme's `/css` folder. 
+ * It will automatically be loaded for you when a user is writing via the visual editor.
+ */
