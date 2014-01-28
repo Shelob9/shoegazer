@@ -1,10 +1,10 @@
 <?php
 /**
- * @package    ThemeName
+ * @package    Josh Pollock
  * @version    0.1.0
- * @author     Your Name <you@youremailprovider.com>
- * @copyright  Copyright (c) 2013, Your Name
- * @link       http://yoursite.com/themes/theme-slug
+ * @author     Josh Pollock <Josh@JoshPress.net
+ * @copyright  Copyright (c) 2014, Josh Pollock
+ * @link       http://JoshPress.net
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
