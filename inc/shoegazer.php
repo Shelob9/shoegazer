@@ -62,7 +62,7 @@ class shoegazer {
         //site title color
         $style .= "h1.site-title a { color: #{$colors[ 'header_text' ]} }";
         //footer, header bg
-        $style .= "#menu-primary, #footer { background-color: #{$colors[ 'alt_bg' ]} }";
+        $style .= "#menu-primary, #footer { background-color: #{$colors[ 'alt_bg' ]}; border-bottom: 1px solid #{$colors[ 'accent']} }";
         //do the background color with this, for now. @todo this right.
         $style .= "body { background-color: #{$colors[ 'page_bg' ]} }";
         wp_add_inline_style( 'style', $style );
