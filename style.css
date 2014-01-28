@@ -14,3 +14,8 @@
 /*
  * Based on Justin Tadlock's starter child them for Stargazer.
  */
+
+#menu-primary, #footer {margin: 20px auto;}
+
+
+#menu-primary, #header, #main, #footer {max-width: 1025px; }
