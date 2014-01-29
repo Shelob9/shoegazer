@@ -109,13 +109,13 @@ class shoegazer {
         }
         elseif ( $this->skin() == 'ectasyWine') {
             $colors = array(
-                'primary'       => '',
-                'page_bg'       => '',
-                'main_bg'       => '',
-                'alt_bg'        => '',
-                'text'          => '',
-                'accent'        => '',
-                'header_text'   => '',
+                'primary'       => '9A6F4D',
+                'page_bg'       => 'A78A72',
+                'main_bg'       => 'ECE9E4',
+                'alt_bg'        => 'B6AA9F',
+                'text'          => '15120C',
+                'accent'        => '7E7E7E',
+                'header_text'   => '9A6F4D',
             );
         }
         elseif ( $this->skin() == 'geek') {
