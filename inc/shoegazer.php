@@ -53,13 +53,13 @@ class shoegazer {
     function colors() {
         if ( $this->skin() == 'mbv' ) {
             $colors = array(
-                'primary'       => '',
-                'page_bg'       => '',
-                'main_bg'       => '',
-                'alt_bg'        => '',
-                'text'          => '',
-                'accent'        => '',
-                'header_text'   => '',
+                'primary'       => '2B2F6E',
+                'page_bg'       => '314294',
+                'main_bg'       => 'fff',
+                'alt_bg'        => '18163A',
+                'text'          => '314294',
+                'accent'        => '644D99',
+                'header_text'   => '314294',
             );
         }
         elseif ( $this->skin() == 'loveless' ) {
