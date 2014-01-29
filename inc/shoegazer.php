@@ -127,8 +127,6 @@ class shoegazer {
      *
      * @since 0.1.0
      *
-     * @todo menu pop-out bg colors
-     *
      * @uses wp_add_inline_style()
      * @uses shoegazer::colors()
      */
@@ -142,6 +140,8 @@ class shoegazer {
         $style .= "h1.site-title a { color: #{$colors[ 'header_text' ]} }";
         //footer, header bg
         $style .= "#menu-primary, #footer { background-color: #{$colors[ 'alt_bg' ]}; border-bottom: 1px solid #{$colors[ 'accent']} }";
+        //sub menu
+        $style .= "#menu-primary li li a, #menu-secondary li li a { background-color: #{$colors[ 'alt_bg' ]}; border-color: #{$colors[ 'accent']} }";
         //header and footer menu link colors
         $style .= "
             #menu-primary li.current-menu-item>a, #menu-primary li a:hover, #menu-social li.current-menu-item>a,  #menu-social li a:hover, #footer a:hover {
