@@ -87,13 +87,13 @@ class shoegazer {
         }
         elseif ( $this->skin() == 'tremolo' ) {
             $colors = array(
-                'primary'       => '',
-                'page_bg'       => '',
-                'main_bg'       => '',
-                'alt_bg'        => '',
-                'text'          => '',
-                'accent'        => '',
-                'header_text'   => '',
+                'primary'       => 'A13051',
+                'page_bg'       => 'C6304C',
+                'main_bg'       => 'CF515B',
+                'alt_bg'        => '664431',
+                'text'          => '6F1521',
+                'accent'        => 'A13051',
+                'header_text'   => '664431',
             );
         }
         elseif ( $this->skin() == 'glider' ) {
