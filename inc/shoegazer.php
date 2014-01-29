@@ -14,6 +14,14 @@ class shoegazer {
         add_filter( 'theme_mod_color_primary', array( $this, 'color_primary' ) );
         /** Add additional skin specific CSS as inline styles */
         add_action( 'wp_enqueue_scripts', array( $this, 'inline' ) );
+        /**Update Colors Fix **/
+        add_action( 'update_option_theme_mods_' . get_stylesheet(), array( $this, 'update_mods' ) );
+        /**Output settings in head for testing purposes**/
+        if ( defined( 'SHOEGAZER_DEBUG' ) ) {
+            if ( SHOEGAZER_DEBUG == true ) {
+                add_action( 'wp_head', array( $this, 'test_mods'  ) );
+            }
+        }
     }
 
     /**
@@ -150,6 +158,18 @@ class shoegazer {
     }
 
     /**
+    /**
+     * Utility function to output some theme mods and $this->colors() to head if SHOEGAZER_DEBUG == true
+     *
+     * @since 0.1.0
+     */
+    function test_mods() {
+        echo 'bg: '.get_theme_mod( 'background_color' );
+        echo 'hdr_text: '.get_theme_mod( 'header_textcolor' );
+        echo 'primary: '.get_theme_mod( 'color_primary' );
+        echo '<br />';
+        print_r( $this->colors() );
+    }
      * Setup function.
      *
      * @since  0.1.0
