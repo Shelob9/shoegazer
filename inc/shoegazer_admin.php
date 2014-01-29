@@ -11,7 +11,7 @@
      * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
      */
 
-class shoegaazer_admin {
+class shoegazer_admin {
     function __construct() {
         add_action( 'customize_register', array( $this, 'skin' ) );
     }
@@ -54,4 +54,4 @@ class shoegaazer_admin {
         );
     }
 }
-new shoegaazer_admin();
+new shoegazer_admin();
