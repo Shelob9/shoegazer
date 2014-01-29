@@ -45,7 +45,10 @@ class shoegaazer_admin {
                     'loveless'          => 'Loveless',
                     'isntAnything'      => "Isn't Anything",
                     'tremolo'           => 'Tremolo',
-                    'glider'            => 'Glider'
+                    'glider'            => 'Glider',
+                    'ectasyWine'        => 'Ectasy and Wine',
+                    'geek'              => 'Geek',
+
                 ),
             )
         );
