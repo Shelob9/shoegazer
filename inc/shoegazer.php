@@ -191,7 +191,7 @@ class shoegazer {
         $colors = $this->colors();
         set_theme_mod( 'background_color', $colors[ 'page_bg' ] );
         set_theme_mod( 'header_textcolor', $colors[ 'header_text' ] );
-        set_theme_mod( 'color_primary', $color['primary'] );
+        set_theme_mod( 'color_primary', $colors['primary'] );
     }
 
     /**
