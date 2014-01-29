@@ -158,6 +158,18 @@ class shoegazer {
     }
 
     /**
+     * Function update theme mods for primary color, page bg color and header text color
+     *
+     * @TODO Figure out how much of this is really needed. Hopefully none of it.
+     * @since 0.1.0
+     */
+    function update_mods() {
+        $colors = $this->colors();
+        set_theme_mod( 'background_color', $colors[ 'page_bg' ] );
+        set_theme_mod( 'header_textcolor', $colors[ 'header_text' ] );
+        set_theme_mod( 'color_primary', $color['primary'] );
+    }
+
     /**
      * Utility function to output some theme mods and $this->colors() to head if SHOEGAZER_DEBUG == true
      *
@@ -170,6 +182,8 @@ class shoegazer {
         echo '<br />';
         print_r( $this->colors() );
     }
+
+    /**
      * Setup function.
      *
      * @since  0.1.0
