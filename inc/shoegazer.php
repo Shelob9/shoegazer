@@ -120,13 +120,13 @@ class shoegazer {
         }
         elseif ( $this->skin() == 'geek') {
             $colors = array(
-                'primary'       => '',
-                'page_bg'       => '',
-                'main_bg'       => '',
-                'alt_bg'        => '',
-                'text'          => '',
-                'accent'        => '',
-                'header_text'   => '',
+                'primary'       => 'A06726',
+                'page_bg'       => 'E08A2C',
+                'main_bg'       => 'E9A957',
+                'alt_bg'        => '4B361C',
+                'text'          => '2B2319',
+                'accent'        => '6D4A20',
+                'header_text'   => '4B361C',
             );
         }
         else {
