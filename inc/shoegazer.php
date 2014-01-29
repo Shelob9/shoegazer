@@ -155,8 +155,8 @@ class shoegazer {
         ";
         //do the background color with this, for now. @todo this right.
         $style .= "body { background-color: #{$colors[ 'page_bg' ]} }";
+        //add these styles inline
         wp_add_inline_style( 'style', $style );
-
     }
 
     /**
