@@ -134,6 +134,8 @@ class shoegazer {
         $colors = $this->colors();
         //widget-title
         $style = ".widget-title { background-color: #{$colors[ 'primary' ]} }";
+        //main text color
+        $style .= "p, li {color: #{$colors[ 'text' ]};}";
         //main bg color
         $style .= "#sidebar-subsidiary, #main, #header { background-color: #{$colors[ 'main_bg' ]} }"; ;
         //site title color
