@@ -174,7 +174,22 @@ class shoegazer {
             #menu-primary li a, #menu-social li a, #footer a {
                 color: #{$colors[ 'main_bg' ]};
             }
+            #menu-primary li a, #menu-secondary li a {
+                border-color: #{$colors[ 'accent' ]};
+            }
+            @media only screen and (max-width: 799px) {
+                #menu-primary li a, #menu-secondary li a {
+                    color: #{$colors[ 'accent' ]};
+                    background: #{$colors[ 'alt_bg' ]};
+                    border-color: #{$colors[ 'accent' ]};
+                }
+            }
         ";
+        //menu toggle
+        $style .= "
+                .menu-toggle, #menu-primary .menu-toggle  { color: #{$colors[ 'primary' ]};}
+                #menu-primary .menu-toggle:hover, .menu-toggle:hover  { color: #{$colors[ 'page_bg' ]}; }
+                ";
         //add these styles inline
         wp_add_inline_style( 'style', $style );
     }

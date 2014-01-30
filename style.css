@@ -23,6 +23,5 @@
 #main, #header { padding-left: 12px; }
 #header {padding-right: 12px;}
 
-
 /**Fix for wider background on widget titles, set inline on .widget-title**/
 .widget-title .wrap { background-color: transparent !important; }
