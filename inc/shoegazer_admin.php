@@ -14,6 +14,8 @@
 class shoegazer_admin {
     function __construct() {
         add_action( 'customize_register', array( $this, 'skin' ) );
+        /**Add the customizer script**/
+        add_action( 'customize_preview_init', array( $this, 'preview' ) );
     }
     function skin() {
         global $wp_customize;
@@ -53,5 +55,22 @@ class shoegazer_admin {
             )
         );
     }
+
+    /**
+     * Add the script for updating in customizer
+     *
+     */
+    function preview() {
+        wp_enqueue_script( 'shoegazer-customize', trailingslashit( CHILD_THEME_URI ). 'js/shoegazer-preview.js', array( 'jquery' ), false, true );
+        $shoegazer = new shoegazer();
+        $skin = $shoegazer->skin();
+        $colors = $shoegazer->colors();
+        $shoegazer = array(
+            'skin'      => $skin,
+            'colors'    => $colors
+        );
+        wp_localize_script( 'shoegazer-customize', 'sgvar', $shoegazer );
+    }
+
 }
 new shoegazer_admin();

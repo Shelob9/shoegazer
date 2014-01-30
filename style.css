@@ -22,3 +22,7 @@
 /**Fix Padding**/
 #main, #header { padding-left: 12px; }
 #header {padding-right: 12px;}
+
+
+/** **/
+.widget-title .wrap { background-color: transparent !important; }
