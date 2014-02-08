@@ -22,6 +22,7 @@ class shoegazer_admin {
 
         //remove colors section
         $wp_customize->remove_section( 'colors');
+        $wp_customize->remove_section( 'header_image');
 
         //add skin section
         $wp_customize->add_section( 'skin', array(
